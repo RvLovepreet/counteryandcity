@@ -13,58 +13,16 @@ import {
     View,
   } from 'react-native';
 
-const SearchBar = () => {
+const SearchBar = ({setInput}) => {
     const navigation = useNavigation();
-    const [jsonData , setJsondata] = useState();
-    const [matchString, setMatchString] = useState("")
-    useEffect(()=>{
-        const url = `https://countriesnow.space/api/v0.1/countries/capital`;
-        const fetchAPI = async() => {
-            try{
-                const response = await fetch(url)
-                const jsonFormat = await response.json()
-                /* console.log(jsonFormat.data) */
-               /*  console.log(typeof jsonFormat.data) */
-                setJsondata([...jsonFormat.data])
-               /*  console.log(jsonData[0]) */
-                console.log(jsonData[1])
-                console.log(jsonData[1].capital.match('Mariehamn'))
-            }catch(err){
-                console.log(err)
-            }
-        }
-     /*   */
-        
-         fetchAPI(); 
-        console.log(typeof matchString)
-        
-    },[])
-    const FetchAPI2 = (inputvalue,List) => {
-        return List.filter(place => {
-            const regex = new RegExp(inputvalue,'gi')
-            return place.name.match(regex) || place.capital.match(regex)
-        })
-
-    }
     const matchFunction = (data) =>{
-        setMatchString(data)
-        /* console.log(matchString) */
-        console.log(FetchAPI2(matchString,jsonData))
+        setInput(() => data)
     } 
-    const gotoCountery = () =>{
-        navigation.navigate('CouteryWithCity')
-      /*   navigation.navigate("CouteryWithCity") */
-    }
-    const changeState = (data) => {
-        setMatchString(data)
-        console.log(matchString)
-    }
     return (
         <View style={styles.searchbar}>
         <TextInput style={styles.inputBox} 
         placeholder="Enter Countery Name" 
         onChangeText={data => matchFunction(data)}></TextInput>
-      
         </View>
     )
 }

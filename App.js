@@ -4,7 +4,7 @@ import type {PropsWithChildren} from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
  import {createNativeStackNavigator} from '@react-navigation/native-stack'; 
-import List from './screens/listofcountries';
+import List from './screens/List';
 import Home from './screens/Home';
 import ListItem from './screens/ListItem';
 import CounteryWithCity from './screens/couteryWithCityName';
