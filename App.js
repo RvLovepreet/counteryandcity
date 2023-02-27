@@ -28,16 +28,7 @@ const App = () => {
         <Stack.Screen name="CouteryWithCity" component={CounteryWithCity} />
       </Stack.Navigator>
     </NavigationContainer> 
- /*    <Home/> */
-   /*  <SafeAreaView>
-
-    <View>
-    <Text>
-      Hello Everyone
-    </Text>
-   <List/>
-    </View>
-    </SafeAreaView> */
+ 
   )
 }
 

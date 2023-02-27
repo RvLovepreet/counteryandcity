@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react';
-import { useNavigation } from '@react-navigation/native';
 import type {PropsWithChildren} from 'react';
 import {
     SafeAreaView,
@@ -14,9 +13,9 @@ import {
   } from 'react-native';
 
 const SearchBar = ({setInput}) => {
-    const navigation = useNavigation();
+    
     const matchFunction = (data) =>{
-        setInput(() => data)
+        setInput(() =>data)
     } 
     return (
         <View style={styles.searchbar}>
@@ -52,19 +51,5 @@ inputBox:{
     width:'100%'
 
 },
-searchbtn:{
-    backgroundColor:'#0062ff',
-    textAlign:'center',
-    width:'20%',
-    padding:5, 
-    display:'flex',
-    marginLeft:5,
-    borderRadius:10,
-    alignItems:'center',
-},
-searchbtntext:{
-    color:'#fff',
-    fontSize:24,
-    fontWeight:'600'
-},
+
 });

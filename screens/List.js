@@ -14,25 +14,22 @@ FlatList,
 
 const List = ({jsonData}) => { 
     return (
-        <>
-        
-        <View>
-            <ScrollView>
-            <FlatList 
+       
+        <View style={styles.countryList} >
+            <FlatList  
             data= {jsonData}
             renderItem = {({item}) =>
-            <ListItem country={item.name} />
+            <ListItem  country={item.name}  />
             }
             />
-            </ScrollView>
         </View>
    
-        </>
+     
     )
 }
 export default List;
 
 
 const styles = StyleSheet.create({
-    
+    countryList:{marginBottom:200},
 });
